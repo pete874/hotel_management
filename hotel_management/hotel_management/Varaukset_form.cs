@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace hotel_management
 {
-    public partial class Form1 : Form
+    public partial class Varaukset_form : Form
     {
-        public Form1()
+        public Varaukset_form()
         {
             InitializeComponent();
+        }
+
+        private void Varaukset_form_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

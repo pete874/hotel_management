@@ -33,6 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MySql.Data, Version=8.0.22.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,16 +47,51 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="ASIAKAS.cs" />
+    <Compile Include="Asiakkaat_form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Asiakkaat_form.Designer.cs">
+      <DependentUpon>Asiakkaat_form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Huoneet_form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Huoneet_form.Designer.cs">
+      <DependentUpon>Huoneet_form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kirjaudu_form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kirjaudu_form.Designer.cs">
+      <DependentUpon>Kirjaudu_form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Paasivu_form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Paasivu_form.Designer.cs">
+      <DependentUpon>Paasivu_form.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Varaukset_form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Varaukset_form.Designer.cs">
+      <DependentUpon>Varaukset_form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="YHDISTA.cs" />
+    <EmbeddedResource Include="Asiakkaat_form.resx">
+      <DependentUpon>Asiakkaat_form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Huoneet_form.resx">
+      <DependentUpon>Huoneet_form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kirjaudu_form.resx">
+      <DependentUpon>Kirjaudu_form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Paasivu_form.resx">
+      <DependentUpon>Paasivu_form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -66,6 +102,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Varaukset_form.resx">
+      <DependentUpon>Varaukset_form.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
