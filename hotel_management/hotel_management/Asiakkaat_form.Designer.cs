@@ -64,10 +64,11 @@
             // AsiakkaatDG
             // 
             this.AsiakkaatDG.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.AsiakkaatDG.Location = new System.Drawing.Point(564, 132);
+            this.AsiakkaatDG.Location = new System.Drawing.Point(462, 132);
             this.AsiakkaatDG.Name = "AsiakkaatDG";
-            this.AsiakkaatDG.Size = new System.Drawing.Size(569, 475);
+            this.AsiakkaatDG.Size = new System.Drawing.Size(726, 428);
             this.AsiakkaatDG.TabIndex = 1;
+            this.AsiakkaatDG.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.AsiakkaatDG_CellClick);
             // 
             // EtunimiLB
             // 
@@ -183,9 +184,9 @@
             // 
             // LisaaBT
             // 
-            this.LisaaBT.Location = new System.Drawing.Point(48, 576);
+            this.LisaaBT.Location = new System.Drawing.Point(12, 529);
             this.LisaaBT.Name = "LisaaBT";
-            this.LisaaBT.Size = new System.Drawing.Size(115, 31);
+            this.LisaaBT.Size = new System.Drawing.Size(101, 31);
             this.LisaaBT.TabIndex = 16;
             this.LisaaBT.Text = "Lisää asiakas";
             this.LisaaBT.UseVisualStyleBackColor = true;
@@ -193,9 +194,9 @@
             // 
             // MuokkaaBT
             // 
-            this.MuokkaaBT.Location = new System.Drawing.Point(169, 576);
+            this.MuokkaaBT.Location = new System.Drawing.Point(119, 529);
             this.MuokkaaBT.Name = "MuokkaaBT";
-            this.MuokkaaBT.Size = new System.Drawing.Size(115, 31);
+            this.MuokkaaBT.Size = new System.Drawing.Size(101, 31);
             this.MuokkaaBT.TabIndex = 17;
             this.MuokkaaBT.Text = "Muokkaa";
             this.MuokkaaBT.UseVisualStyleBackColor = true;
@@ -203,9 +204,9 @@
             // 
             // PoistaBT
             // 
-            this.PoistaBT.Location = new System.Drawing.Point(290, 576);
+            this.PoistaBT.Location = new System.Drawing.Point(333, 529);
             this.PoistaBT.Name = "PoistaBT";
-            this.PoistaBT.Size = new System.Drawing.Size(115, 31);
+            this.PoistaBT.Size = new System.Drawing.Size(101, 31);
             this.PoistaBT.TabIndex = 18;
             this.PoistaBT.Text = "Poista";
             this.PoistaBT.UseVisualStyleBackColor = true;
@@ -213,9 +214,9 @@
             // 
             // TyhjennaBT
             // 
-            this.TyhjennaBT.Location = new System.Drawing.Point(411, 576);
+            this.TyhjennaBT.Location = new System.Drawing.Point(226, 529);
             this.TyhjennaBT.Name = "TyhjennaBT";
-            this.TyhjennaBT.Size = new System.Drawing.Size(115, 31);
+            this.TyhjennaBT.Size = new System.Drawing.Size(101, 31);
             this.TyhjennaBT.TabIndex = 19;
             this.TyhjennaBT.Text = "Tyhjennä";
             this.TyhjennaBT.UseVisualStyleBackColor = true;

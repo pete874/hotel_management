@@ -19,7 +19,11 @@ namespace hotel_management
 
         private void Varaukset_form_Load(object sender, EventArgs e)
         {
+            SisaanDTP.CustomFormat = "dd.MM.yyyy";
+            SisaanDTP.Format = DateTimePickerFormat.Custom;
 
+            UlosDTP.CustomFormat = "dd.MM.yyyy";
+            UlosDTP.Format = DateTimePickerFormat.Custom;
         }
     }
 }
