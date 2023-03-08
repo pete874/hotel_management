@@ -10,7 +10,7 @@ namespace hotel_management
 {
     class YHDISTA
     {
-        private MySqlConnection yhteys = new MySqlConnection("datasource = localhost; port = 3306; username = root; password =; database = hotelli");
+        private MySqlConnection yhteys = new MySqlConnection("datasource = sql8.freesqldatabase.com; port = 3306; username = sql8603367; password = Vnq2M3BaYI; database = sql8603367");
     
         public MySqlConnection otaYhteys()
         {
