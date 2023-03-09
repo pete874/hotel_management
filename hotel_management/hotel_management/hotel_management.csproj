@@ -54,6 +54,7 @@
     <Compile Include="Asiakkaat_form.Designer.cs">
       <DependentUpon>Asiakkaat_form.cs</DependentUpon>
     </Compile>
+    <Compile Include="HUONE.cs" />
     <Compile Include="Huoneet_form.cs">
       <SubType>Form</SubType>
     </Compile>

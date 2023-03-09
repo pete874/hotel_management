@@ -164,6 +164,7 @@
             this.LisaaBT.TabIndex = 11;
             this.LisaaBT.Text = "Lisää";
             this.LisaaBT.UseVisualStyleBackColor = true;
+            this.LisaaBT.Click += new System.EventHandler(this.LisaaBT_Click);
             // 
             // MuokkaaBT
             // 
