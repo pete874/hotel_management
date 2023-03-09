@@ -43,7 +43,7 @@ namespace hotel_management
             adapter.SelectCommand = komento;
 
             //täytetään DataTable taulu riveillä, jotka haetaan määritetyllä SQL komennolla.
-            //Jos vain toinen salasanasta ja kayttajatunnuksesta menee oikein, tulee rivejä tauluun 1.
+            //Jos vain toinen salasanasta ja kayttajatunnuksesta menee oikein, tulee rivejä tauluun 0.
             //Jos kummatkin menevät väärin, rivejä on 0.
             //jos kummatkin menevät oikein, rivejä on 2.
             adapter.Fill(taulu);
@@ -51,10 +51,9 @@ namespace hotel_management
             kirjaudu.avaaYhteys();
 
             //tarkistetaan taulun rivit. Jotta käyttäjätunnus ja salasana menisivät oikein, pitää rivejä olla 2, joka tarkistetaan if lauseella.
-            //huom, yksi rivi on nollas indeksi, joten tarkistetaan onko count isompi kuin 0.
+            //huom, ensimmäinen rivi on nollas indeksi, joten tarkistetaan onko count isompi kuin 0.
             if (taulu.Rows.Count > 0)
-            {
-                kirjaudu.suljeYhteys();
+            {                
                 PaasivuForm paasivu = new PaasivuForm();
                 paasivu.Show();
                 this.Hide();
