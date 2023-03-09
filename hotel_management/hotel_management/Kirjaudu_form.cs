@@ -54,7 +54,6 @@ namespace hotel_management
             //huom, yksi rivi on nollas indeksi, joten tarkistetaan onko count isompi kuin 0.
             if (taulu.Rows.Count > 0)
             {
-                kirjaudu.suljeYhteys();
                 PaasivuForm paasivu = new PaasivuForm();
                 paasivu.Show();
                 this.Hide();
