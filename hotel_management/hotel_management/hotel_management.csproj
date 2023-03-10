@@ -81,6 +81,7 @@
     <Compile Include="Varaukset_form.Designer.cs">
       <DependentUpon>Varaukset_form.cs</DependentUpon>
     </Compile>
+    <Compile Include="VARAUS.cs" />
     <Compile Include="YHDISTA.cs" />
     <EmbeddedResource Include="Asiakkaat_form.resx">
       <DependentUpon>Asiakkaat_form.cs</DependentUpon>

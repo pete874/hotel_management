@@ -25,6 +25,23 @@ namespace hotel_management
             return taulu;
         }
 
+        public DataTable AsiakasLista()
+        {
+            MySqlCommand haeKaikki = new MySqlCommand("SELECT etunimi, sukunimi FROM asiakkaat", yhteys.otaYhteys());
+
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+            DataTable taulu = new DataTable();
+
+            adapter.SelectCommand = haeKaikki;
+            adapter.Fill(taulu);
+
+
+            //lisätään taulu muuttujaan yksi columni lisää, joka yhdistää etunimen ja sukunimen. Näin saadaan varauksen formin comboboxiin etu- ja sukunimi näkyviin
+            taulu.Columns.Add("FullName", typeof(string), "etunimi + ' ' + sukunimi");
+
+            return taulu;
+        }
+
         public bool LisaaAsiakas(String etunimi, String sukunimi, String lahiosoite, String postinumero, String postitoimipaikka, String kayttajanimi, String salasana)
         {
             MySqlCommand komento = new MySqlCommand();

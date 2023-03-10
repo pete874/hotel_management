@@ -1,20 +1,20 @@
 ﻿using MySql.Data.MySqlClient;
-using System.Data;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace hotel_management
 {
-    class HUONE
+    class VARAUS
     {
         YHDISTA yhteys = new YHDISTA();
 
-        public DataTable HaeHuoneet()
+        public DataTable HaeVaraukset()
         {
-            MySqlCommand haeKaikki = new MySqlCommand("SELECT huonenro, huonetyyppi, puhelin, vapaa FROM huoneet", yhteys.otaYhteys());
+            MySqlCommand haeKaikki = new MySqlCommand("SELECT varausnumero, tyontekija, huonetyyppi, huonenro, sisaan, ulos FROM varaukset", yhteys.otaYhteys());
 
             MySqlDataAdapter adapter = new MySqlDataAdapter();
             DataTable taulu = new DataTable();
@@ -25,31 +25,18 @@ namespace hotel_management
             return taulu;
         }
 
-        public DataTable HuoneTyyppiLista()
-        {
-            MySqlCommand haeKaikki = new MySqlCommand("SELECT kategoriaid, huonetyyppi FROM huonekategoriat", yhteys.otaYhteys());
-
-            MySqlDataAdapter adapter = new MySqlDataAdapter();
-            DataTable taulu = new DataTable();
-
-            adapter.SelectCommand = haeKaikki;
-            adapter.Fill(taulu);
-
-            return taulu;
-        }
-
-
-        public bool LisaaHuone(int huonenro, int huonetyyppi, String puhelin, String vapaa)
+        public bool LisaaVaraus(String tyontekija, String huonetyyppi, int huonenro, String sisaan, String ulos)
         {
             MySqlCommand komento = new MySqlCommand();
-            String lisaysKysely = "INSERT INTO huoneet (huonenro, huonetyyppi, puhelin, vapaa) VALUES (@hnr, @hty, @puh, @vap); ";
+            String lisaysKysely = "INSERT INTO varaukset (tyontekija, huonetyyppi, huonenro, sisaan, ulos) VALUES (@tyo, @hty, @hnu, @sis, @ulo); ";
             komento.CommandText = lisaysKysely;
             komento.Connection = yhteys.otaYhteys();
 
-            komento.Parameters.Add("@hnr", MySqlDbType.VarChar).Value = huonenro;
+            komento.Parameters.Add("@tyo", MySqlDbType.VarChar).Value = tyontekija;
             komento.Parameters.Add("@hty", MySqlDbType.VarChar).Value = huonetyyppi;
-            komento.Parameters.Add("@puh", MySqlDbType.VarChar).Value = puhelin;
-            komento.Parameters.Add("@vap", MySqlDbType.VarChar).Value = vapaa;
+            komento.Parameters.Add("@hnu", MySqlDbType.Int32).Value = huonenro;
+            komento.Parameters.Add("@sis", MySqlDbType.VarChar).Value = sisaan;
+            komento.Parameters.Add("@ulo", MySqlDbType.VarChar).Value = ulos;
 
 
             yhteys.avaaYhteys();
@@ -65,17 +52,20 @@ namespace hotel_management
             }
         }
 
-        public bool MuokkaaHuone(int huonenro, int huonetyyppi, String puhelin, String vapaa)
+        public bool MuokkaaVaraus(int varausnumero, String tyontekija, String huonetyyppi, int huonenro, String sisaan, String ulos)
         {
             MySqlCommand komento = new MySqlCommand();
-            String muokkauskysely = "UPDATE `huoneet` SET `huonetyyppi` = @hty, `puhelin` = @puh, `vapaa` = @vap WHERE huonenro = @hnu";
-            komento.CommandText = muokkauskysely;
+            String lisaysKysely = "UPDATE `varaukset` SET `tyontekija` = @tyo,`huonetyyppi` = @hty, `huonenro` = @hnu, `sisaan` = @sis, `ulos` = @ulo WHERE varausnumero = @vnu";
+            komento.CommandText = lisaysKysely;
             komento.Connection = yhteys.otaYhteys();
 
+            komento.Parameters.Add("@vnu", MySqlDbType.Int32).Value = varausnumero;
+            komento.Parameters.Add("@tyo", MySqlDbType.VarChar).Value = tyontekija;
+            komento.Parameters.Add("@hty", MySqlDbType.VarChar).Value = huonetyyppi;
             komento.Parameters.Add("@hnu", MySqlDbType.Int32).Value = huonenro;
-            komento.Parameters.Add("@hty", MySqlDbType.Int32).Value = huonetyyppi;
-            komento.Parameters.Add("@puh", MySqlDbType.VarChar).Value = puhelin;
-            komento.Parameters.Add("@vap", MySqlDbType.VarChar).Value = vapaa;
+            komento.Parameters.Add("@sis", MySqlDbType.VarChar).Value = sisaan;
+            komento.Parameters.Add("@ulo", MySqlDbType.VarChar).Value = ulos;
+
 
             yhteys.avaaYhteys();
             if (komento.ExecuteNonQuery() == 1)
@@ -88,17 +78,17 @@ namespace hotel_management
                 yhteys.suljeYhteys();
                 return false;
             }
-
         }
 
-        public bool PoistaHuone(int huonenro)
+        public bool PoistaVaraus(int varausnumero)
         {
             MySqlCommand komento = new MySqlCommand();
-            String poistokysely = "DELETE FROM huoneet WHERE huonenro = @hnu";
-            komento.CommandText = poistokysely;
+            String lisaysKysely = "DELETE FROM varaukset WHERE varausnumero = @vnu";
+            komento.CommandText = lisaysKysely;
             komento.Connection = yhteys.otaYhteys();
 
-            komento.Parameters.Add("@hnu", MySqlDbType.Int32).Value = huonenro;
+            komento.Parameters.Add("@vnu", MySqlDbType.Int32).Value = varausnumero;
+
 
             yhteys.avaaYhteys();
             if (komento.ExecuteNonQuery() == 1)
@@ -114,4 +104,3 @@ namespace hotel_management
         }
     }
 }
-

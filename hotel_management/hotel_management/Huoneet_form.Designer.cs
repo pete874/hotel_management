@@ -155,6 +155,7 @@
             this.HuoneetDG.Name = "HuoneetDG";
             this.HuoneetDG.Size = new System.Drawing.Size(708, 294);
             this.HuoneetDG.TabIndex = 10;
+            this.HuoneetDG.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.HuoneetDG_CellClick);
             // 
             // LisaaBT
             // 
@@ -174,6 +175,7 @@
             this.MuokkaaBT.TabIndex = 12;
             this.MuokkaaBT.Text = "Muokkaa";
             this.MuokkaaBT.UseVisualStyleBackColor = true;
+            this.MuokkaaBT.Click += new System.EventHandler(this.MuokkaaBT_Click);
             // 
             // TyhjennaBT
             // 
@@ -183,6 +185,7 @@
             this.TyhjennaBT.TabIndex = 13;
             this.TyhjennaBT.Text = "Tyhjennä";
             this.TyhjennaBT.UseVisualStyleBackColor = true;
+            this.TyhjennaBT.Click += new System.EventHandler(this.TyhjennaBT_Click);
             // 
             // PoistaBT
             // 
@@ -192,6 +195,7 @@
             this.PoistaBT.TabIndex = 14;
             this.PoistaBT.Text = "Poista";
             this.PoistaBT.UseVisualStyleBackColor = true;
+            this.PoistaBT.Click += new System.EventHandler(this.PoistaBT_Click);
             // 
             // Huoneet_form
             // 
