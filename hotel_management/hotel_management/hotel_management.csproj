@@ -103,6 +103,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Varaukset_form.resx">
       <DependentUpon>Varaukset_form.cs</DependentUpon>
@@ -119,6 +120,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\kirjaudu_backg.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\paasivu_backg.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\varaukset_backg.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
