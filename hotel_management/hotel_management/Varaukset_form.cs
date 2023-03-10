@@ -51,6 +51,8 @@ namespace hotel_management
             TyontekijaCB.SelectedValue = VarauksetDG.CurrentRow.Cells[1].Value.ToString();
             HuonetyyppiCB.SelectedValue = VarauksetDG.CurrentRow.Cells[2].Value.ToString();
             HuonenroCB.SelectedValue = VarauksetDG.CurrentRow.Cells[3].Value.ToString();
+            SisaanDTP.Value = DateTime.Parse(VarauksetDG.CurrentRow.Cells[4].Value.ToString());
+            UlosDTP.Value = DateTime.Parse(VarauksetDG.CurrentRow.Cells[5].Value.ToString());
         }
 
         private void LisaaBT_Click(object sender, EventArgs e)
