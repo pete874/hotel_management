@@ -133,7 +133,7 @@ namespace hotel_management
 
             if (varaukset.PoistaVaraus(varausnumero))
             {
-                MessageBox.Show("Varausta poistettiin onnistuneesti", "Varauksen poisto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Varaus poistettiin onnistuneesti", "Varauksen poisto", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
