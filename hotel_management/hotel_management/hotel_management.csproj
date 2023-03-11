@@ -130,5 +130,11 @@
   <ItemGroup>
     <None Include="imgs\varaukset_backg.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\asiakkaat_backg1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\huoneet_backg.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

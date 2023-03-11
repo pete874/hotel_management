@@ -44,8 +44,16 @@
             this.MuokkaaBT = new System.Windows.Forms.Button();
             this.TyhjennaBT = new System.Windows.Forms.Button();
             this.PoistaBT = new System.Windows.Forms.Button();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.RadiobuttonPN.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.HuoneetDG)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -54,7 +62,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Baskerville Old Face", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label1.Location = new System.Drawing.Point(505, 37);
+            this.label1.Location = new System.Drawing.Point(3, 10);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(200, 54);
             this.label1.TabIndex = 0;
@@ -63,7 +71,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(79, 138);
+            this.label2.Location = new System.Drawing.Point(68, 101);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(108, 20);
             this.label2.TabIndex = 1;
@@ -72,7 +80,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(86, 184);
+            this.label3.Location = new System.Drawing.Point(75, 147);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(101, 20);
             this.label3.TabIndex = 2;
@@ -81,7 +89,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(122, 227);
+            this.label4.Location = new System.Drawing.Point(111, 190);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(65, 20);
             this.label4.TabIndex = 3;
@@ -90,7 +98,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(127, 275);
+            this.label5.Location = new System.Drawing.Point(116, 243);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(60, 20);
             this.label5.TabIndex = 4;
@@ -98,24 +106,24 @@
             // 
             // HuoneNroTB
             // 
-            this.HuoneNroTB.Location = new System.Drawing.Point(202, 135);
+            this.HuoneNroTB.Location = new System.Drawing.Point(191, 98);
             this.HuoneNroTB.Name = "HuoneNroTB";
-            this.HuoneNroTB.Size = new System.Drawing.Size(171, 26);
+            this.HuoneNroTB.Size = new System.Drawing.Size(167, 26);
             this.HuoneNroTB.TabIndex = 5;
             // 
             // HuoneTyyppiCB
             // 
             this.HuoneTyyppiCB.FormattingEnabled = true;
-            this.HuoneTyyppiCB.Location = new System.Drawing.Point(202, 181);
+            this.HuoneTyyppiCB.Location = new System.Drawing.Point(191, 139);
             this.HuoneTyyppiCB.Name = "HuoneTyyppiCB";
-            this.HuoneTyyppiCB.Size = new System.Drawing.Size(171, 28);
+            this.HuoneTyyppiCB.Size = new System.Drawing.Size(167, 28);
             this.HuoneTyyppiCB.TabIndex = 6;
             // 
             // PuhTB
             // 
-            this.PuhTB.Location = new System.Drawing.Point(202, 224);
+            this.PuhTB.Location = new System.Drawing.Point(191, 184);
             this.PuhTB.Name = "PuhTB";
-            this.PuhTB.Size = new System.Drawing.Size(171, 26);
+            this.PuhTB.Size = new System.Drawing.Size(167, 26);
             this.PuhTB.TabIndex = 7;
             // 
             // KyllaRB
@@ -145,79 +153,126 @@
             this.RadiobuttonPN.BackColor = System.Drawing.Color.Tan;
             this.RadiobuttonPN.Controls.Add(this.KyllaRB);
             this.RadiobuttonPN.Controls.Add(this.EiRB);
-            this.RadiobuttonPN.Location = new System.Drawing.Point(202, 256);
+            this.RadiobuttonPN.Location = new System.Drawing.Point(191, 226);
             this.RadiobuttonPN.Name = "RadiobuttonPN";
-            this.RadiobuttonPN.Size = new System.Drawing.Size(171, 52);
+            this.RadiobuttonPN.Size = new System.Drawing.Size(167, 52);
             this.RadiobuttonPN.TabIndex = 9;
             // 
             // HuoneetDG
             // 
+            this.HuoneetDG.BackgroundColor = System.Drawing.Color.Linen;
+            this.HuoneetDG.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.HuoneetDG.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.HuoneetDG.Location = new System.Drawing.Point(430, 135);
+            this.HuoneetDG.Location = new System.Drawing.Point(3, 67);
             this.HuoneetDG.Name = "HuoneetDG";
-            this.HuoneetDG.Size = new System.Drawing.Size(708, 294);
+            this.HuoneetDG.Size = new System.Drawing.Size(777, 363);
             this.HuoneetDG.TabIndex = 10;
             this.HuoneetDG.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.HuoneetDG_CellClick);
             // 
             // LisaaBT
             // 
-            this.LisaaBT.Location = new System.Drawing.Point(29, 398);
+            this.LisaaBT.BackColor = System.Drawing.Color.MediumSpringGreen;
+            this.LisaaBT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.LisaaBT.Location = new System.Drawing.Point(20, 308);
             this.LisaaBT.Name = "LisaaBT";
-            this.LisaaBT.Size = new System.Drawing.Size(85, 31);
+            this.LisaaBT.Size = new System.Drawing.Size(92, 31);
             this.LisaaBT.TabIndex = 11;
             this.LisaaBT.Text = "Lisää";
-            this.LisaaBT.UseVisualStyleBackColor = true;
+            this.LisaaBT.UseVisualStyleBackColor = false;
             this.LisaaBT.Click += new System.EventHandler(this.LisaaBT_Click);
             // 
             // MuokkaaBT
             // 
-            this.MuokkaaBT.Location = new System.Drawing.Point(128, 398);
+            this.MuokkaaBT.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.MuokkaaBT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.MuokkaaBT.Location = new System.Drawing.Point(118, 308);
             this.MuokkaaBT.Name = "MuokkaaBT";
-            this.MuokkaaBT.Size = new System.Drawing.Size(85, 31);
+            this.MuokkaaBT.Size = new System.Drawing.Size(92, 31);
             this.MuokkaaBT.TabIndex = 12;
             this.MuokkaaBT.Text = "Muokkaa";
-            this.MuokkaaBT.UseVisualStyleBackColor = true;
+            this.MuokkaaBT.UseVisualStyleBackColor = false;
             this.MuokkaaBT.Click += new System.EventHandler(this.MuokkaaBT_Click);
             // 
             // TyhjennaBT
             // 
-            this.TyhjennaBT.Location = new System.Drawing.Point(233, 398);
+            this.TyhjennaBT.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.TyhjennaBT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.TyhjennaBT.Location = new System.Drawing.Point(216, 308);
             this.TyhjennaBT.Name = "TyhjennaBT";
-            this.TyhjennaBT.Size = new System.Drawing.Size(85, 31);
+            this.TyhjennaBT.Size = new System.Drawing.Size(92, 31);
             this.TyhjennaBT.TabIndex = 13;
             this.TyhjennaBT.Text = "Tyhjennä";
-            this.TyhjennaBT.UseVisualStyleBackColor = true;
+            this.TyhjennaBT.UseVisualStyleBackColor = false;
             this.TyhjennaBT.Click += new System.EventHandler(this.TyhjennaBT_Click);
             // 
             // PoistaBT
             // 
-            this.PoistaBT.Location = new System.Drawing.Point(329, 398);
+            this.PoistaBT.BackColor = System.Drawing.Color.IndianRed;
+            this.PoistaBT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.PoistaBT.Location = new System.Drawing.Point(314, 308);
             this.PoistaBT.Name = "PoistaBT";
-            this.PoistaBT.Size = new System.Drawing.Size(85, 31);
+            this.PoistaBT.Size = new System.Drawing.Size(92, 31);
             this.PoistaBT.TabIndex = 14;
             this.PoistaBT.Text = "Poista";
-            this.PoistaBT.UseVisualStyleBackColor = true;
+            this.PoistaBT.UseVisualStyleBackColor = false;
             this.PoistaBT.Click += new System.EventHandler(this.PoistaBT_Click);
+            // 
+            // splitContainer1
+            // 
+            this.splitContainer1.Location = new System.Drawing.Point(-8, 186);
+            this.splitContainer1.Name = "splitContainer1";
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.BackColor = System.Drawing.Color.DarkCyan;
+            this.splitContainer1.Panel1.Controls.Add(this.PoistaBT);
+            this.splitContainer1.Panel1.Controls.Add(this.TyhjennaBT);
+            this.splitContainer1.Panel1.Controls.Add(this.MuokkaaBT);
+            this.splitContainer1.Panel1.Controls.Add(this.LisaaBT);
+            this.splitContainer1.Panel1.Controls.Add(this.PuhTB);
+            this.splitContainer1.Panel1.Controls.Add(this.label5);
+            this.splitContainer1.Panel1.Controls.Add(this.label4);
+            this.splitContainer1.Panel1.Controls.Add(this.label3);
+            this.splitContainer1.Panel1.Controls.Add(this.label2);
+            this.splitContainer1.Panel1.Controls.Add(this.HuoneNroTB);
+            this.splitContainer1.Panel1.Controls.Add(this.HuoneTyyppiCB);
+            this.splitContainer1.Panel1.Controls.Add(this.RadiobuttonPN);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.HuoneetDG);
+            this.splitContainer1.Panel2.Controls.Add(this.label1);
+            this.splitContainer1.Size = new System.Drawing.Size(1209, 433);
+            this.splitContainer1.SplitterDistance = 425;
+            this.splitContainer1.TabIndex = 15;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::hotel_management.Properties.Resources.huoneet_backg;
+            this.pictureBox1.Location = new System.Drawing.Point(4, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(1197, 180);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 15;
+            this.pictureBox1.TabStop = false;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(-5, 170);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1206, 23);
+            this.flowLayoutPanel1.TabIndex = 15;
             // 
             // Huoneet_form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1200, 692);
-            this.Controls.Add(this.PoistaBT);
-            this.Controls.Add(this.TyhjennaBT);
-            this.Controls.Add(this.MuokkaaBT);
-            this.Controls.Add(this.LisaaBT);
-            this.Controls.Add(this.HuoneetDG);
-            this.Controls.Add(this.RadiobuttonPN);
-            this.Controls.Add(this.PuhTB);
-            this.Controls.Add(this.HuoneTyyppiCB);
-            this.Controls.Add(this.HuoneNroTB);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.BackColor = System.Drawing.Color.Linen;
+            this.ClientSize = new System.Drawing.Size(1200, 612);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.splitContainer1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Huoneet_form";
@@ -226,8 +281,14 @@
             this.RadiobuttonPN.ResumeLayout(false);
             this.RadiobuttonPN.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.HuoneetDG)).EndInit();
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel1.PerformLayout();
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            this.splitContainer1.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -249,5 +310,8 @@
         private System.Windows.Forms.Button MuokkaaBT;
         private System.Windows.Forms.Button TyhjennaBT;
         private System.Windows.Forms.Button PoistaBT;
+        private System.Windows.Forms.SplitContainer splitContainer1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }

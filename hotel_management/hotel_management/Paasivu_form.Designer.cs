@@ -30,9 +30,9 @@
         {
             this.TervetuloaLB = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.hallitseAsiakkaitaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hallitseVarauksiaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hallitseHuoneitaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.hallitseAsiakkaitaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -66,14 +66,6 @@
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // hallitseAsiakkaitaToolStripMenuItem
-            // 
-            this.hallitseAsiakkaitaToolStripMenuItem.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.hallitseAsiakkaitaToolStripMenuItem.Name = "hallitseAsiakkaitaToolStripMenuItem";
-            this.hallitseAsiakkaitaToolStripMenuItem.Size = new System.Drawing.Size(320, 46);
-            this.hallitseAsiakkaitaToolStripMenuItem.Text = "Hallitse asiakkaita";
-            this.hallitseAsiakkaitaToolStripMenuItem.Click += new System.EventHandler(this.hallitseAsiakkaitaToolStripMenuItem_Click);
-            // 
             // hallitseVarauksiaToolStripMenuItem
             // 
             this.hallitseVarauksiaToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
@@ -92,6 +84,14 @@
             this.hallitseHuoneitaToolStripMenuItem.Text = "Hallitse huoneita";
             this.hallitseHuoneitaToolStripMenuItem.Click += new System.EventHandler(this.hallitseHuoneitaToolStripMenuItem_Click);
             // 
+            // hallitseAsiakkaitaToolStripMenuItem
+            // 
+            this.hallitseAsiakkaitaToolStripMenuItem.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.hallitseAsiakkaitaToolStripMenuItem.Name = "hallitseAsiakkaitaToolStripMenuItem";
+            this.hallitseAsiakkaitaToolStripMenuItem.Size = new System.Drawing.Size(320, 46);
+            this.hallitseAsiakkaitaToolStripMenuItem.Text = "Hallitse asiakkaita";
+            this.hallitseAsiakkaitaToolStripMenuItem.Click += new System.EventHandler(this.hallitseAsiakkaitaToolStripMenuItem_Click);
+            // 
             // PaasivuForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -99,7 +99,7 @@
             this.BackColor = System.Drawing.SystemColors.Control;
             this.BackgroundImage = global::hotel_management.Properties.Resources.paasivu_backg;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(934, 626);
+            this.ClientSize = new System.Drawing.Size(936, 626);
             this.Controls.Add(this.TervetuloaLB);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

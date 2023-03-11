@@ -63,6 +63,26 @@ namespace hotel_management.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap asiakkaat_backg1 {
+            get {
+                object obj = ResourceManager.GetObject("asiakkaat_backg1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap huoneet_backg {
+            get {
+                object obj = ResourceManager.GetObject("huoneet_backg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap kirjaudu_backg {
             get {
                 object obj = ResourceManager.GetObject("kirjaudu_backg", resourceCulture);
