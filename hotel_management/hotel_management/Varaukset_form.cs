@@ -67,8 +67,11 @@ namespace hotel_management
             String tyontekija = TyontekijaCB.SelectedValue.ToString();
             String huonetyyppi = HuonetyyppiCB.SelectedValue.ToString();
             int huonenro = Int32.Parse(HuonenroCB.Text);
-            String sisaan = SisaanDTP.Value.ToString();
-            String ulos = UlosDTP.Value.ToString();
+            DateTime sisaantemp = SisaanDTP.Value;
+            DateTime ulostemp = UlosDTP.Value;
+
+            String sisaan = sisaantemp.ToString("yyyy-MM-dd");
+            String ulos = ulostemp.ToString("yyyy-MM-dd");
 
             if (tyontekija.Trim().Equals("") ||
                 huonetyyppi.Trim().Equals("") ||

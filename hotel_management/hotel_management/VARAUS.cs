@@ -36,6 +36,7 @@ namespace hotel_management
             //Tallennetaan stringiin SQL kysely. Tämä voidaan myös laittaa suoraan MySqlCommandin sulkeiden sisään yhteys-funktion kanssa, niikuin ylimmässä funktiossa on tehty.
             String lisaysKysely = "INSERT INTO varaukset (tyontekija, huonetyyppi, huonenro, sisaan, ulos) VALUES (@tyo, @hty, @hnu, @sis, @ulo); ";
 
+
             //Asettaa Stringin SQL komennoksi komento muuttujaan
             komento.CommandText = lisaysKysely;
 
