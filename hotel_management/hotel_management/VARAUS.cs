@@ -10,8 +10,10 @@ namespace hotel_management
 {
     class VARAUS
     {
+        //YHDISTA classista instanssi yhteys muuttujaan jota käytetään tämän classin sisällä
         YHDISTA yhteys = new YHDISTA();
 
+        //Funktiolla haetaan tiedot varauksista, tallennetaan ne tauluun ja palautetaan taulu
         public DataTable HaeVaraukset()
         {
             MySqlCommand haeKaikki = new MySqlCommand("SELECT varausnumero, tyontekija, huonetyyppi, huonenro, sisaan, ulos FROM varaukset", yhteys.otaYhteys());
@@ -25,6 +27,7 @@ namespace hotel_management
             return taulu;
         }
 
+        //Funktio varauksen lisäämistä varten
         public bool LisaaVaraus(String tyontekija, String huonetyyppi, int huonenro, String sisaan, String ulos)
         {
             MySqlCommand komento = new MySqlCommand();
@@ -52,6 +55,7 @@ namespace hotel_management
             }
         }
 
+        //Funktio varauksen muokkaamiseen
         public bool MuokkaaVaraus(int varausnumero, String tyontekija, String huonetyyppi, int huonenro, String sisaan, String ulos)
         {
             MySqlCommand komento = new MySqlCommand();
@@ -80,6 +84,7 @@ namespace hotel_management
             }
         }
 
+        //Funktio varauksen poistamiseen
         public bool PoistaVaraus(int varausnumero)
         {
             MySqlCommand komento = new MySqlCommand();

@@ -10,8 +10,10 @@ namespace hotel_management
 {
     class HUONE
     {
+        //Luodaan yhteys instanssi YHDISTA classista.
         YHDISTA yhteys = new YHDISTA();
 
+        //Funktiolla haetaan SQL:stä huoneiden tiedot tauluun ja palautetaan taulu
         public DataTable HaeHuoneet()
         {
             MySqlCommand haeKaikki = new MySqlCommand("SELECT huonenro, huonetyyppi, puhelin, vapaa FROM huoneet", yhteys.otaYhteys());
@@ -25,6 +27,7 @@ namespace hotel_management
             return taulu;
         }
 
+        //Funktiolla haetaan SQL huonekategoriasta kategoriaid ja huonetyyppi jotka tallennetaan tauluun ja palautetaan taulu
         public DataTable HuoneTyyppiLista()
         {
             MySqlCommand haeKaikki = new MySqlCommand("SELECT kategoriaid, huonetyyppi FROM huonekategoriat", yhteys.otaYhteys());
@@ -38,7 +41,7 @@ namespace hotel_management
             return taulu;
         }
 
-
+        //Funktio huoneen SQL:ään lisäämistä varten
         public bool LisaaHuone(int huonenro, int huonetyyppi, String puhelin, String vapaa)
         {
             MySqlCommand komento = new MySqlCommand();
@@ -65,6 +68,7 @@ namespace hotel_management
             }
         }
 
+        //Funktio huoneen muokkaamiseen SQL:ssä
         public bool MuokkaaHuone(int huonenro, int huonetyyppi, String puhelin, String vapaa)
         {
             MySqlCommand komento = new MySqlCommand();
@@ -91,6 +95,7 @@ namespace hotel_management
 
         }
 
+        //Funktio huoneen poistamiseen SQL:stä
         public bool PoistaHuone(int huonenro)
         {
             MySqlCommand komento = new MySqlCommand();
