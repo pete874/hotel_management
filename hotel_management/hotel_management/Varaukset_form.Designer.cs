@@ -146,6 +146,7 @@
             this.HuonetyyppiCB.Name = "HuonetyyppiCB";
             this.HuonetyyppiCB.Size = new System.Drawing.Size(172, 28);
             this.HuonetyyppiCB.TabIndex = 9;
+            this.HuonetyyppiCB.SelectedIndexChanged += new System.EventHandler(this.HuonetyyppiCB_SelectedIndexChanged);
             // 
             // HuonenroCB
             // 

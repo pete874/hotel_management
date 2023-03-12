@@ -177,5 +177,36 @@ namespace hotel_management
             }
             
         }
+
+        private void HuonetyyppiCB_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            String huonetyyppi = Convert.ToString(HuonetyyppiCB.SelectedValue);
+
+            if (huonetyyppi == "yhden hengen")
+            {
+                HuonenroCB.DataSource = huoneet.HaeYhdenHengenHuoneet();
+                HuonenroCB.DisplayMember = "huonenro";
+                HuonenroCB.ValueMember = "huonenro";
+            }
+            if (huonetyyppi == "kahden hengen")
+            {
+                HuonenroCB.DataSource = huoneet.HaeKahdenHengenHuoneet();
+                HuonenroCB.DisplayMember = "huonenro";
+                HuonenroCB.ValueMember = "huonenro";
+            }
+            if (huonetyyppi == "kolmen hengen")
+            {
+                HuonenroCB.DataSource = huoneet.HaeKolmenHengenHuoneet();
+                HuonenroCB.DisplayMember = "huonenro";
+                HuonenroCB.ValueMember = "huonenro";
+            }
+            if (huonetyyppi == "sviitti")
+            {
+                HuonenroCB.DataSource = huoneet.HaeSviittiHuoneet();
+                HuonenroCB.DisplayMember = "huonenro";
+                HuonenroCB.ValueMember = "huonenro";
+            }
+
+        }
     }
 }

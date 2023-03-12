@@ -43,6 +43,62 @@ namespace hotel_management
             return taulu;
         }
 
+        public DataTable HaeYhdenHengenHuoneet()
+        {
+            // tehdään uusi mysqlcommand. Sulkeiden sisään tulee itse komento ja otaYhteys funktio. MySqlCommand(String, MySqlConnection)
+            MySqlCommand haeKaikki = new MySqlCommand("SELECT huonenro, huonetyyppi, puhelin, vapaa FROM huoneet WHERE huonenro < 200", yhteys.otaYhteys());
+
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+            DataTable taulu = new DataTable();
+
+            adapter.SelectCommand = haeKaikki;
+            adapter.Fill(taulu);
+
+            return taulu;
+        }
+
+        public DataTable HaeKahdenHengenHuoneet()
+        {
+            // tehdään uusi mysqlcommand. Sulkeiden sisään tulee itse komento ja otaYhteys funktio. MySqlCommand(String, MySqlConnection)
+            MySqlCommand haeKaikki = new MySqlCommand("SELECT huonenro, huonetyyppi, puhelin, vapaa FROM huoneet WHERE huonenro > 199 AND huonenro < 300", yhteys.otaYhteys());
+
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+            DataTable taulu = new DataTable();
+
+            adapter.SelectCommand = haeKaikki;
+            adapter.Fill(taulu);
+
+            return taulu;
+        }
+
+        public DataTable HaeKolmenHengenHuoneet()
+        {
+            // tehdään uusi mysqlcommand. Sulkeiden sisään tulee itse komento ja otaYhteys funktio. MySqlCommand(String, MySqlConnection)
+            MySqlCommand haeKaikki = new MySqlCommand("SELECT huonenro, huonetyyppi, puhelin, vapaa FROM huoneet WHERE huonenro > 299 AND huonenro < 400", yhteys.otaYhteys());
+
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+            DataTable taulu = new DataTable();
+
+            adapter.SelectCommand = haeKaikki;
+            adapter.Fill(taulu);
+
+            return taulu;
+        }
+
+        public DataTable HaeSviittiHuoneet()
+        {
+            // tehdään uusi mysqlcommand. Sulkeiden sisään tulee itse komento ja otaYhteys funktio. MySqlCommand(String, MySqlConnection)
+            MySqlCommand haeKaikki = new MySqlCommand("SELECT huonenro, huonetyyppi, puhelin, vapaa FROM huoneet WHERE huonenro > 399", yhteys.otaYhteys());
+
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+            DataTable taulu = new DataTable();
+
+            adapter.SelectCommand = haeKaikki;
+            adapter.Fill(taulu);
+
+            return taulu;
+        }
+
         //Funktio huoneen SQL:ään lisäämistä varten
         public bool LisaaHuone(int huonenro, int huonetyyppi, String puhelin, String vapaa)
         {
