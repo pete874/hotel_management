@@ -151,5 +151,31 @@ namespace hotel_management
             }
             VarauksetDG.DataSource = varaukset.HaeVaraukset();
         }
+
+        private void HuonenroCB_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            String huonenumero = Convert.ToString(HuonenroCB.SelectedValue);
+                      
+            
+            String temp = huonenumero.Substring(0, 1);
+
+            if (temp == "1")
+            {
+                HuonetyyppiCB.SelectedValue = "yhden hengen";
+            }
+            else if (temp == "2")
+            {
+                HuonetyyppiCB.SelectedValue = "kahden hengen";
+            }
+            else if (temp == "3")
+            {
+                HuonetyyppiCB.SelectedValue = "kolmen hengen";
+            }
+            else
+            {
+                HuonetyyppiCB.SelectedValue = "sviitti";
+            }
+            
+        }
     }
 }

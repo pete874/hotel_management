@@ -154,6 +154,7 @@
             this.HuonenroCB.Name = "HuonenroCB";
             this.HuonenroCB.Size = new System.Drawing.Size(172, 28);
             this.HuonenroCB.TabIndex = 10;
+            this.HuonenroCB.SelectedIndexChanged += new System.EventHandler(this.HuonenroCB_SelectedIndexChanged);
             // 
             // SisaanDTP
             // 
