@@ -13,6 +13,7 @@ namespace hotel_management
 {
     public partial class Varaukset_form : Form
     {
+        //varauksissa käytetään seuraavia classeja, joista tehdään instanssit
         VARAUS varaukset = new VARAUS();
         HUONE huoneet = new HUONE();
         ASIAKAS asiakas = new ASIAKAS();
@@ -21,16 +22,20 @@ namespace hotel_management
             InitializeComponent();
         }
 
+        //tänne sisään kaikki asiat jotka halutaan tapahtuvan heti formin latautuessa
         private void Varaukset_form_Load(object sender, EventArgs e)
         {
+            //datetimepickerille custom format
             SisaanDTP.CustomFormat = "dd.MM.yyyy";
             SisaanDTP.Format = DateTimePickerFormat.Custom;
 
             UlosDTP.CustomFormat = "dd.MM.yyyy";
             UlosDTP.Format = DateTimePickerFormat.Custom;
 
+            //täytetään datagrid HaeVaraukset funktiolla
             VarauksetDG.DataSource = varaukset.HaeVaraukset();
 
+            //alla lisätään jokaiseen kolmeen comboboxiin tiedot
             HuonetyyppiCB.DataSource = huoneet.HuoneTyyppiLista();
             HuonetyyppiCB.DisplayMember = "huonetyyppi";
             HuonetyyppiCB.ValueMember = "huonetyyppi";
@@ -56,6 +61,7 @@ namespace hotel_management
             UlosDTP.Value = DateTime.Parse(VarauksetDG.CurrentRow.Cells[5].Value.ToString());
         }
 
+        //lisätään varaus "lisää" napin painalluksesta
         private void LisaaBT_Click(object sender, EventArgs e)
         {
             String tyontekija = TyontekijaCB.SelectedValue.ToString();
@@ -87,6 +93,7 @@ namespace hotel_management
             VarauksetDG.DataSource = varaukset.HaeVaraukset();
         }
 
+        //muokkaa napin painalluksesta varauksen muokkaus
         private void MuokkaaBT_Click(object sender, EventArgs e)
         {
             String tyontekija = TyontekijaCB.SelectedValue.ToString();
@@ -119,6 +126,7 @@ namespace hotel_management
             VarauksetDG.DataSource = varaukset.HaeVaraukset();
         }
 
+        //tyhjennetään "tyhjennä" napilla syöttökentät
         private void TyhjennaBT_Click(object sender, EventArgs e)
         {
             VarausnroTB.Text = "";
@@ -127,6 +135,7 @@ namespace hotel_management
             HuonenroCB.SelectedIndex = 0;
         }
 
+        //poista napilla poistetaan varaus varausnumeron perusteella
         private void PoistaBT_Click(object sender, EventArgs e)
         {
             int varausnumero = Convert.ToInt32(VarausnroTB.Text);

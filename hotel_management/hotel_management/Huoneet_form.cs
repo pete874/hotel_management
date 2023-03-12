@@ -12,23 +12,32 @@ namespace hotel_management
 {
     public partial class Huoneet_form : Form
     {
+        //tehdään HUONE classista huoneet instanssi
         HUONE huoneet = new HUONE();
         public Huoneet_form()
         {
             InitializeComponent();
         }
 
+        //tänne sisään kaikki asiat jotka halutaan tapahtuvan heti formin latautuessa
         private void Huoneet_form_Load(object sender, EventArgs e)
         {
+            //haetaan datagridiin tiedot HaeHuoneet funktiolla
             HuoneetDG.DataSource = huoneet.HaeHuoneet();
 
+            //haetaan dropdown menuun tiedot huoneiden tyypeistä
             HuoneTyyppiCB.DataSource = huoneet.HuoneTyyppiLista();
+            
+            //valikossa näkyvä kenttä
             HuoneTyyppiCB.DisplayMember = "huonetyyppi";
+
+            //value joka palautetaan kun valikosta valitaan jokin huonetyyppi
             HuoneTyyppiCB.ValueMember = "kategoriaid";
             
             
         }
 
+        //Huoneen lisäys lisäysnappia painamalla
         private void LisaaBT_Click(object sender, EventArgs e)
         {
             int huonenro = Convert.ToInt32(HuoneNroTB.Text);
@@ -48,6 +57,7 @@ namespace hotel_management
             HuoneetDG.DataSource = huoneet.HaeHuoneet();
         }
 
+        //Huoneen muokkaus muokkaa painiketta painamalla
         private void MuokkaaBT_Click(object sender, EventArgs e)
         {
             int huonetyyppi = Convert.ToInt32(HuoneTyyppiCB.SelectedValue.ToString());
@@ -83,6 +93,7 @@ namespace hotel_management
             PuhTB.Text = HuoneetDG.CurrentRow.Cells[2].Value.ToString();
         }
 
+        //tyhjennä nappia painamalla tyhjennetään tekstikentät
         private void TyhjennaBT_Click(object sender, EventArgs e)
         {
             HuoneNroTB.Text = "";
@@ -90,6 +101,7 @@ namespace hotel_management
             PuhTB.Text = "";
         }
 
+        //poista nappia painamalla poistetaan huone huoneen numeron perusteella
         private void PoistaBT_Click(object sender, EventArgs e)
         {
             int huonenro = Convert.ToInt32(HuoneNroTB.Text);
