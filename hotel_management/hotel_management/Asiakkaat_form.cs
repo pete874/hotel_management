@@ -125,6 +125,7 @@ namespace hotel_management
             TyhjennaBT.PerformClick();
         }
 
+        //Tyhjennetään tekstikentät napin painalluksesta
         private void TyhjennaBT_Click(object sender, EventArgs e)
         {
             EtunimiTB.Text = "";
@@ -136,6 +137,7 @@ namespace hotel_management
             SalasanaTB.Text = "";
         }
 
+        //Täytetään textikentät vastaamaan taulukosta painetun rivin tietoja
         private void AsiakkaatDG_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             EtunimiTB.Text = AsiakkaatDG.CurrentRow.Cells[0].Value.ToString();

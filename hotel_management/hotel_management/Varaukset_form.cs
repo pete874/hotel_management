@@ -45,6 +45,7 @@ namespace hotel_management
            
         }
 
+        //Täytetään textikentät vastaamaan taulukosta painetun rivin tietoja
         private void VarauksetDG_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             VarausnroTB.Text = VarauksetDG.CurrentRow.Cells[0].Value.ToString();

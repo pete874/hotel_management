@@ -75,6 +75,7 @@ namespace hotel_management
             HuoneetDG.DataSource = huoneet.HaeHuoneet();
         }
 
+        //Täytetään textikentät vastaamaan taulukosta painetun rivin tietoja
         private void HuoneetDG_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             HuoneNroTB.Text = HuoneetDG.CurrentRow.Cells[0].Value.ToString();
