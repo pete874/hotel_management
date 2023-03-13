@@ -129,6 +129,7 @@
             // KyllaRB
             // 
             this.KyllaRB.AutoSize = true;
+            this.KyllaRB.Checked = true;
             this.KyllaRB.Location = new System.Drawing.Point(23, 15);
             this.KyllaRB.Name = "KyllaRB";
             this.KyllaRB.Size = new System.Drawing.Size(77, 24);
