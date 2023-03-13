@@ -11,7 +11,7 @@ namespace hotel_management
     class YHDISTA
     {
         //Tallennetaan yhteys nimiseen muuttujaan haluamamme database lähde. Muuttujan tyyppi/metodi on tässä tapauksessa MySqlConnection
-        private MySqlConnection yhteys = new MySqlConnection("datasource = sql8.freesqldatabase.com; port = 3306; username = sql8603367; password = Vnq2M3BaYI; database = sql8603367; convert zero datetime=True");
+        private MySqlConnection yhteys = new MySqlConnection("datasource = localhost; port = 3306; username = root; password =; database = sql123; convert zero datetime=True");
         
 
         //Tehdään functio, joka pelkästään palauttaa yhteys muttujan

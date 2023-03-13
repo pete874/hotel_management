@@ -53,7 +53,7 @@ namespace hotel_management
                 }
                 else
                 {
-                    MessageBox.Show("Huonen lisäys epäonnistui!", "Huoneen lisäys", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Huoneen lisäys epäonnistui!", "Huoneen lisäys", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch(Exception ex)

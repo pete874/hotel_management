@@ -72,7 +72,7 @@ namespace hotel_management
         }
 
         //Funktio varauksen muokkaamiseen
-        public bool MuokkaaVaraus(int varausnumero, String tyontekija, String huonetyyppi, int huonenro, String sisaan, String ulos)
+        public bool MuokkaaVaraus(int varausnumero, String tyontekija, String huonetyyppi, int huonenro, DateTime sisaan, DateTime ulos)
         {
             //tehdään uusi MySqlCommand.
             MySqlCommand komento = new MySqlCommand();
@@ -91,8 +91,8 @@ namespace hotel_management
             komento.Parameters.Add("@tyo", MySqlDbType.VarChar).Value = tyontekija;
             komento.Parameters.Add("@hty", MySqlDbType.VarChar).Value = huonetyyppi;
             komento.Parameters.Add("@hnu", MySqlDbType.Int32).Value = huonenro;
-            komento.Parameters.Add("@sis", MySqlDbType.VarChar).Value = sisaan;
-            komento.Parameters.Add("@ulo", MySqlDbType.VarChar).Value = ulos;
+            komento.Parameters.Add("@sis", MySqlDbType.Date).Value = sisaan;
+            komento.Parameters.Add("@ulo", MySqlDbType.Date).Value = ulos;
 
 
             yhteys.avaaYhteys();

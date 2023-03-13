@@ -102,15 +102,14 @@ namespace hotel_management
             String tyontekija = TyontekijaCB.SelectedValue.ToString();
             String huonetyyppi = HuonetyyppiCB.SelectedValue.ToString();
             int huonenro = Int32.Parse(HuonenroCB.Text);
-            String sisaan = SisaanDTP.Value.ToString();
-            String ulos = UlosDTP.Value.ToString();
+            DateTime sisaan = SisaanDTP.Value;
+            DateTime ulos = UlosDTP.Value;
             int varausnumero = Convert.ToInt32(VarausnroTB.Text);
 
             if (tyontekija.Trim().Equals("") ||
                 huonetyyppi.Trim().Equals("") ||
-                huonenro.Equals("") ||
-                sisaan.Trim().Equals("") ||
-                ulos.Trim().Equals(""))
+                huonenro.Equals(""))
+
             {
                 MessageBox.Show("Täytä kaikki kentät", "Virhe syötössä", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }

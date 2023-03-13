@@ -183,6 +183,7 @@
             // 
             this.KayttajatunnusTB.Location = new System.Drawing.Point(216, 251);
             this.KayttajatunnusTB.Name = "KayttajatunnusTB";
+            this.KayttajatunnusTB.ReadOnly = true;
             this.KayttajatunnusTB.Size = new System.Drawing.Size(174, 26);
             this.KayttajatunnusTB.TabIndex = 14;
             // 
@@ -190,6 +191,7 @@
             // 
             this.SalasanaTB.Location = new System.Drawing.Point(216, 294);
             this.SalasanaTB.Name = "SalasanaTB";
+            this.SalasanaTB.ReadOnly = true;
             this.SalasanaTB.Size = new System.Drawing.Size(174, 26);
             this.SalasanaTB.TabIndex = 15;
             // 
@@ -306,6 +308,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.splitContainer1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Asiakkaat_form";
             this.Text = "Hallitse asiakkaita";

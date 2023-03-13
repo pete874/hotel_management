@@ -69,31 +69,39 @@ namespace hotel_management
             String kayttajanimi = etunimi.Substring(0, 3).ToLower() + sukunimi.Substring(0, 5).ToLower();
             String salsana = salasana();
 
-            //Tarkistetaan ettei ole tyhjiä kenttiä
-            if (etunimi.Trim().Equals("") || 
-                sukunimi.Trim().Equals("") || 
-                lahiosoite.Trim().Equals("") || 
-                postinumero.Trim().Equals("") || 
-                ptoimipaikka.Trim().Equals("") || 
-                kayttajanimi.Trim().Equals("") || 
-                salsana.Trim().Equals(""))
+            try
             {
-                MessageBox.Show("Täytä kaikki kentät", "Virhe syötössä", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-            //Itse asiakkaan lisäys jos kaikki kentät on täytetty
-            else
-            {
-                //lisätään asiakat jos lisaaAsiakas funktio palauttaa booleanin true, muuten annetaan virhe.
-                Boolean lisaaAsiakas = asiakkaat.LisaaAsiakas(etunimi, sukunimi, lahiosoite, postinumero, ptoimipaikka, kayttajanimi, salsana);
-                if (lisaaAsiakas)
+                //Tarkistetaan ettei ole tyhjiä kenttiä
+                if (etunimi.Trim().Equals("") ||
+                    sukunimi.Trim().Equals("") ||
+                    lahiosoite.Trim().Equals("") ||
+                    postinumero.Trim().Equals("") ||
+                    ptoimipaikka.Trim().Equals("") ||
+                    kayttajanimi.Trim().Equals("") ||
+                    salsana.Trim().Equals(""))
                 {
-                    MessageBox.Show("Uusi asiakas lisätty!", "Asiakkaan lisäys", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Täytä kaikki kentät", "Virhe syötössä", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+
+                //Itse asiakkaan lisäys jos kaikki kentät on täytetty
                 else
                 {
-                    MessageBox.Show("Uutta asiakasta ei pystytty lisäämään.", "Asiakkaan lisäys", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    //lisätään asiakat jos lisaaAsiakas funktio palauttaa booleanin true, muuten annetaan virhe.
+                    Boolean lisaaAsiakas = asiakkaat.LisaaAsiakas(etunimi, sukunimi, lahiosoite, postinumero, ptoimipaikka, kayttajanimi, salsana);
+                    if (lisaaAsiakas)
+                    {
+                        MessageBox.Show("Uusi asiakas lisätty!", "Asiakkaan lisäys", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Uutta asiakasta ei pystytty lisäämään.", "Asiakkaan lisäys", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Käyttäjätunnus on jo olemassa!" + ex.Message);
             }
 
             //päivitetään datagridin tiedot
