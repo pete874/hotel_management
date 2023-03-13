@@ -45,14 +45,20 @@ namespace hotel_management
             String puhelin = PuhTB.Text;
 
 
-            
-            if (huoneet.LisaaHuone(huonenro, huonetyyppi, puhelin, "kylla"))
+            try
             {
-                MessageBox.Show("Huone lisätty!", "Huoneen lisäys", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (huoneet.LisaaHuone(huonenro, huonetyyppi, puhelin, "kylla"))
+                {
+                    MessageBox.Show("Huone lisätty!", "Huoneen lisäys", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Huonen lisäys epäonnistui!", "Huoneen lisäys", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            else
+            catch(Exception ex)
             {
-                MessageBox.Show("Huonen lisäys epäonnistui!", "Huoneen lisäys", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Virhe!" + ex.Message);
             }
             HuoneetDG.DataSource = huoneet.HaeHuoneet();
         }
