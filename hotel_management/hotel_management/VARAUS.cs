@@ -38,7 +38,7 @@ namespace hotel_management
             //Tallennetaan stringiin SQL kysely. Tämä voidaan myös laittaa suoraan MySqlCommandin sulkeiden sisään yhteys-funktion kanssa, niikuin ylimmässä funktiossa on tehty.
             //String lisaysKysely2 = "INSERT INTO varaukset (tyontekija, huonetyyppi, huonenro, sisaan, ulos) VALUES (@tyo, @hty, @hnu, @sis, @ulo); ";
             
-            //Tämä komento tarkistaa, onko huone jo varattu kyseisenä ajankohtana
+            //Tämä komento tarkistaa, onko huone jo varattu kyseisenä ajankohtana. Tämä palauttaa rivien määrän tietokannasta, jossa ehdot täyttyvät.
             String lisaysKysely = "SELECT COUNT(*) FROM varaukset WHERE huonenro = @hnu AND (sisaan <= @sis AND ulos >= @ulo);";
 
             //Asettaa Stringin SQL komennoksi komento muuttujaan
@@ -65,6 +65,7 @@ namespace hotel_management
             //jos rivit on 0, niin suoritetaan lisäys, muuten annetaan virhe.
             if (count < 1)
             {
+                //Jos tietokannasta ei löydy yhtään riviä SQL kyselyllä SELECT COUNT, suoritetaan SQL-lisäyskäsky
                 MySqlCommand komento2 = new MySqlCommand("INSERT INTO varaukset (tyontekija, huonetyyppi, huonenro, sisaan, ulos) VALUES (@tyo, @hty, @hnu, @sis, @ulo); ", yhteys.otaYhteys());
                 komento2.Parameters.Add("@tyo", MySqlDbType.VarChar).Value = tyontekija;
                 komento2.Parameters.Add("@hty", MySqlDbType.VarChar).Value = huonetyyppi;
@@ -78,7 +79,8 @@ namespace hotel_management
             }
             else
             {
-                MessageBox.Show("Huone onjo varattu kyseisenä ajankohtana");
+                //Jos tietokannasta löytyy rivejä, annetaan virheilmoitus
+                MessageBox.Show("Huone on jo varattu kyseisenä ajankohtana");
                 yhteys.suljeYhteys();
                 return false;
             }

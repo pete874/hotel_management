@@ -154,6 +154,7 @@ namespace hotel_management
             VarauksetDG.DataSource = varaukset.HaeVaraukset();
         }
 
+        //Comboboxille tarkastus, ettei tietokantaan voi lisätä väärää huonetyyppiä väärällä huonenumerolla
         private void HuonenroCB_SelectedIndexChanged(object sender, EventArgs e)
         {
             String huonenumero = Convert.ToString(HuonenroCB.SelectedValue);
@@ -179,7 +180,7 @@ namespace hotel_management
             }
             
         }
-
+        //Comboboxille tarkastus, ettei tietokantaan voi lisätä väärää huonetyyppiä väärällä huonenumerolla
         private void HuonetyyppiCB_SelectedIndexChanged(object sender, EventArgs e)
         {
             String huonetyyppi = Convert.ToString(HuonetyyppiCB.SelectedValue);

@@ -69,6 +69,7 @@ namespace hotel_management
             String kayttajanimi = etunimi.Substring(0, 3).ToLower() + sukunimi.Substring(0, 5).ToLower();
             String salsana = salasana();
 
+            //Try catch lisätty, jottei tyhjistä kentistä ohjelma kaadu
             try
             {
                 //Tarkistetaan ettei ole tyhjiä kenttiä

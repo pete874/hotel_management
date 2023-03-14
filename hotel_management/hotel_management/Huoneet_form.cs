@@ -51,6 +51,7 @@ namespace hotel_management
             else
             {
                 int huonenro = Int32.Parse(HuoneNroTB.Text);
+                //Try catch lisätty, jottei tyhjistä kentistä ohjelma kaadu
                 try
                 {
                     if (huoneet.LisaaHuone(huonenro, huonetyyppi, puhelin, "kylla"))
@@ -74,6 +75,7 @@ namespace hotel_management
         //Huoneen muokkaus muokkaa painiketta painamalla
         private void MuokkaaBT_Click(object sender, EventArgs e)
         {
+            //Try catch lisätty, jottei tyhjistä kentistä ohjelma kaadu
             try
             {
 
@@ -128,6 +130,7 @@ namespace hotel_management
         //poista nappia painamalla poistetaan huone huoneen numeron perusteella
         private void PoistaBT_Click(object sender, EventArgs e)
         {
+            //Try catch lisätty, jottei tyhjistä kentistä ohjelma kaadu
             try
             {
                 int huonenro = Convert.ToInt32(HuoneNroTB.Text);
